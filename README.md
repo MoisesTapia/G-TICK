@@ -7,3 +7,6 @@
 [![Telegraf](https://img.shields.io/badge/Telegraf-1.14.4-purple)](https://portal.influxdata.com/downloads/)
 [![Chronograf](https://img.shields.io/badge/Chronograf-1.8.4-purple)](https://portal.influxdata.com/downloads/)
 [![Kapacitor](https://img.shields.io/badge/Kapacitor-1.5.5-purple)](https://portal.influxdata.com/downloads/)
+
+## Uso
+

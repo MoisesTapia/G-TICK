@@ -1,0 +1,56 @@
+version: '3'
+
+services:
+    
+    telegraf:
+        container_name: telegraf-compose
+        image: telegraf
+        volumes:
+            - "$PWD/telegraf/telegraf.conf:/etc/telegraf/telegraf.conf:ro"
+            - /var/run/docker.sock:/var/run/docker.sock
+            - /proc:/host/proc:ro
+        env_file:
+            - "$PWD/telegraf/telegraf.env"
+        ports:
+            - 8094:8094
+            - 8092:8092/udp
+            - 8125:8125/udp
+            - 8083:8083
+        restart: always
+    
+    influxdb:
+        container_name: influxdb-compose
+        image: influxdb
+        env_file: 
+            - "$PWD/influxdb/influxdb.env"
+        volumes:
+            - "$PWD/influxdb:/var/lib/influxdb"
+        ports:
+            - 8086:8086
+    
+    chronograf:
+        container_name: chronograf-compose
+        image: chronograf
+        env_file: 
+            - "$PWD/chronograf/chronograf.env"
+        volumes: 
+            - "$PWD/chronograf:/var/lib/chronograf"
+        ports: 
+            - 8888:8888
+    
+    kapacitor:
+        container_name: kapacitor-compose
+        image: kapacitor
+        volumes: 
+            - "$PWD/kapacitor:/var/lib/kapacitor"
+        ports:
+            - 9092:9092
+
+    grafana:
+        container_name: Grafana-com
+        image: grafana/grafana:6.7.4
+        user: "1000"
+        volumes: 
+            - "$PWD/grafana:/var/lib/grafana"
+        ports: 
+            - 3000:3000

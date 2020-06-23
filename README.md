@@ -1,4 +1,4 @@
-# DOCKER [ Grafana + Telegraf - InfluxDB - Chronograf - Kapacitor ]
+![Texto alternativo](https://github.com/MoisesTapia/G-TICK/blob/master/portada.png)
 
 [![Channel](https://img.shields.io/badge/channel-YouTube-red)](https://www.youtube.com/channel/UCiuZK5geN3OCGeBxuXMfHEQ)
 [![Docker](https://img.shields.io/badge/Docker-19.03.8-blue)](https://www.docker.com/)
